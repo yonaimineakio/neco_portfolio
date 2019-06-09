@@ -1,0 +1,134 @@
+<html>
+
+<head>
+
+<title>
+
+社員一覧
+
+</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(function() {
+var menu = $('.menu');
+$('li', menu)
+.mouseover(function(e) {
+$('ul', this).stop().slideDown('fast');
+})
+.mouseout(function(e) {
+$('ul', this).stop().slideUp('fast');
+});
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<style type="text/css">
+
+
+    #container {
+
+    width:100%;
+    margin: 0 auto;
+
+   }
+
+   #content{
+
+   width: 100%;
+
+   margin: 100px auto;
+
+   }
+
+   .employeelist {
+
+      width:100%;
+
+   }
+
+    .employeelist td {
+
+       border-top:solid 1px;
+
+       border-top:solid 1px;
+
+       line-height:18px;
+
+    }
+
+  header {
+   height:10%;
+
+   width:100%;
+
+   background-color: #000000;
+
+   text-align:center;
+  }
+
+.header-component {
+  display: inline-block;
+  color: white;
+}
+
+
+
+
+
+
+ 
+
+
+ a {
+ text-decoration: none;
+  }
+
+ a:hover{color:#005FFF;}
+
+</style>
+
+</head>
+<body>
+<###HEADER###>
+<div id="container">
+
+<div id="content">
+
+<div style="text-align:center">
+
+ <h1>社員一覧</h1>
+
+</div>
+
+<div style="display:inline-block;width:90%">
+
+
+ログイン名：<###LOGINNAME###>
+
+</div>
+
+<table class="employeelist">
+
+<tr>
+
+<td>社員番号</td><td>社員名</td><td>所属部署</td><td>役職</td><td></td>
+
+</tr>
+
+<###EMPLOYEELIST###>
+
+</table>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+

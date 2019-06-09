@@ -1,0 +1,176 @@
+<html>
+
+<head>
+
+<title>
+
+申請一覧
+
+</title>
+//プルダウン機能
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+$(function() {
+var menu = $('.menu');
+$('li', menu)
+.mouseover(function(e) {
+$('ul', this).stop().slideDown('fast');
+})
+.mouseout(function(e) {
+$('ul', this).stop().slideUp('fast');
+});
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<style type="text/css">
+
+
+    #container {
+
+    width:100%;
+    margin: 0 auto;
+
+   }
+
+   #content{
+
+   width: 100%;
+
+   margin: 100px auto;
+
+   }
+
+   
+  #button {
+  
+  height: 10%;
+  
+  width: 10%;
+  
+  border-radius:10px;
+  
+  font-size: 100%;
+
+ }
+
+#button:hover{
+  
+  background-color:#005FFF;
+
+}
+
+
+   .requestlist {
+
+
+      width:100%;
+
+   }
+
+    .requestlist td {
+
+       border-top:solid 1px;
+
+       border-top:solid 1px;
+
+       line-height:18px;
+
+    }
+
+  header {
+   height:10%;
+
+   width:100%;
+
+   background-color: #000000;
+
+   text-align:center;
+  }
+.header-component {
+
+  display: inline-block;
+  
+  color: white;
+
+ }
+
+#paging-links{
+
+  text-align:center;
+   
+  width: 100%;
+}
+
+
+ a {
+
+ text-decoration: none;
+  }
+
+ a:hover{color:#005FFF;}
+
+</style>
+
+</head>
+
+<body>
+<###HEADER###>
+<div id="container">
+
+<div id="content">
+
+<div style="text-align:center">
+
+ <h1>申請一覧</h1>
+
+</div>
+
+<div style="display:inline-block;width:90%">
+
+
+ログイン名：<###LOGINNAME###>
+
+</div>
+
+<div>
+<form action="./requestsort.php" method="post">
+
+<###REQUESTSELECT###>
+
+<###ORDERSELECT###>
+<p>
+<###RESET###>
+</p>
+</form>
+</div>
+<table class="requestlist">
+
+<tr>
+
+<td>図書名</td><td>申請日</td><td>申請者</td><td>申請ステータス</td><td></td>
+
+</tr>
+
+<###REQUESTLIST###>
+
+</table>
+
+<div id="paging-links">
+
+<p><###LINKS###><p/>
+
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

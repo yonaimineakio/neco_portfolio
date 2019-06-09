@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>社員詳細</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(function() {
+var menu = $('.menu');
+$('li', menu)
+.mouseover(function(e) {
+$('ul', this).stop().slideDown('fast');
+})
+.mouseout(function(e) {
+$('ul', this).stop().slideUp('fast');
+});
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+
+#container {
+
+    width:100%;
+    margin: 0 auto;
+
+   }
+
+   #content{
+
+   width: 100%;
+
+   margin: 100px auto;
+
+   }
+
+   header {
+   height:10%;
+
+   width:100%;
+
+   background-color: #000000;
+
+   text-align:center;
+  }
+
+ 
+
+
+   #button {
+
+  height: 10%;
+
+  width: 22%;
+
+  border-radius:10px;
+
+  font-size: 100%;
+
+}
+
+#button:hover{
+
+  background-color:#005FFF;
+
+}
+
+textarea{width: 70%;}
+
+
+ tr{width:100%;}
+
+ .regist_form{
+  width: 100%;
+
+ }
+
+ .regist_form td {
+
+      border-top:solid 1px;
+
+      border-top:solid 1px;
+
+      line-height:18px;
+
+   }
+.nessesary {
+
+  width: 8%; 
+
+}
+
+.checkbox{ width: 3%;}
+
+input{ width:70%;}
+
+
+a{
+  text-decoration: none;
+
+  }
+
+ 
+
+ a:hover{color:#005FFF;}
+
+</style>
+</head>
+<body>
+<###HEADER###>
+ <div id="container">
+   <div id="content">
+     <div style="text-align:center"><h1>社員詳細</h1></div>
+      <div>ログイン者名:<###LOGINNAME###></div>
+     <table class="regist_form">
+       <form id="form" method="post" action="./emp_regist.php">
+        <tr><td>社員番号<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="employee_number" value="<###EMPLOYEENUMBER###>" required></td></tr>
+<tr><td>社員名<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="employee_name" value="<###EMPLOYEENAME###>" required></td></tr>
+        <tr><td>社員名(カナ) <td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="employee_kana" value="<###EMPLOYEEKANA###>" required></td></tr>
+        <tr><td>パスワード<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="password" name="password"  placeholder="パスワードを入力してください" value="<###PASSWORD###>" required></td></tr>
+        <tr><td>性別<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><###GENDER###></td></tr>
+        <tr><td>生年月日<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><###BIRTHDAY###></td></tr>
+        <tr><td>年齢<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><###AGE###></td></tr>
+        <tr><td>管理者<td class="nessesary"><span style="color:red">[必須]</td></span></td><td><###MANAGER###></td></tr>
+        <tr><td>所属部署<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><select name="department_id"><###DEPARTMENT###></select></td></tr>
+        <tr><td>役職<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><select name="position_id"><###POSITION###></select></td></tr>
+        <tr><td>入社日<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><###HIREDATE###></td></tr>
+        <tr><td>退社日<td class="nessesary"><span style="color:red"></span></td></td><td><###LEAVINGDATE###></td></tr>
+        <tr><td>備考<td class="nessesary"><span style="color:red"></span></td></td><td><textarea  name="note"><###NOTE###></textarea></td></tr> 
+        <tr><td><input type="hidden" name="employee_id" value="<###EMPLOYEEID###>"></td></tr>
+     </table>
+       <div><input type="radio" class="checkbox" name="submit_option" value="1" form="form" checked="checked">変更<input type="radio" class="checkbox" name="submit_option" value="3" form="form">削除
+</div>
+
+      <div style="text-align:center;padding-top:20px"><input id="button" type="submit" value="登録" form="form"></div>
+
+   </div>
+ </div>
+
+</body>
+</html>

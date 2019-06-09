@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>新規申請登録</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(function() {
+var menu = $('.menu');
+$('li', menu)
+.mouseover(function(e) {
+$('ul', this).stop().slideDown('fast');
+})
+.mouseout(function(e) {
+$('ul', this).stop().slideUp('fast');
+});
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+#container {
+
+    width:900px;
+    margin: 0 auto;
+
+   }
+
+   #content{
+
+   width: 100%;
+
+   margin: 100px auto;
+
+   }
+
+  #button {
+
+  height: 10%;
+
+  width: 22%;
+
+  border-radius:10px;
+
+  font-size: 100%;
+
+}
+
+#button:hover{
+
+  background-color:#005FFF;
+
+}
+
+
+   header {
+   height:10%;
+
+   width:100%;
+
+   background-color: #000000;
+
+   text-align:center;
+   }
+
+.header-component {
+ 
+ display: inline-block;
+
+ color: white;
+
+}
+
+.masterlist {
+
+
+  border-color:"black";
+ 
+  width: 100%;
+
+ }
+
+.masterlist td{
+  
+ border-top: solid 1px;
+
+
+}
+
+
+
+input{
+
+width:50%;
+
+height: 5%;
+}
+
+
+a{
+  text-decoration: none;
+  
+  }
+
+ 
+
+ a:hover{color:#005FFF;}
+
+</style>
+</head>
+<###HEADER###>
+<body>
+ <div id="container">
+   <div id="content">
+     <div style="text-align:center"><h1>マスタ登録</h1></div>
+      <div style="padding-bottom:10px;padding">ログイン者名:<###LOGINNAME###></div>
+         <div style="padding-bottom:10px;padding-top:10px">
+          <form action="./master_regist_form.php" method="post">
+           <select name="master_number"  onchange="submit(this.form)"><###MASTERSELECT###></select>
+          </form>
+         </div>
+         <form action="./master_regist.php" method="post">
+          <div style="padding-bottom:10px;padding-top:10px">
+            新規<###MASTER###><input type="text" name="master_name">
+          </div>
+           <input type="hidden"name="submit_option"value=1 >
+           <###HIDEMASTERNUMBER###>
+           <div style="padding-bottom:10px;padding-top:10px">
+            <input type="submit" value="登録" id="button">
+          </div> 
+        </form>
+         <table class="masterlist">
+         <tr><td><###MASTER###>ID</td><td><###MASTER###>名</td></tr>
+           <###MASTERLIST###>
+        </table>
+     </div>
+   </div>
+ </div>
+</body>
+</html>
+
+
+

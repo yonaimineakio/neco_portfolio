@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>申請詳細</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(function() {
+var menu = $('.menu');
+$('li', menu)
+.mouseover(function(e) {
+$('ul', this).stop().slideDown('fast');
+})
+.mouseout(function(e) {
+$('ul', this).stop().slideUp('fast');
+});
+});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+<style type="text/css">
+#container {
+
+    width:100%;
+    margin: 0 auto;
+
+   }
+
+   #content{
+
+   width: 100%;
+
+   margin: 100px auto;
+
+   }
+
+    #button {
+
+  height: 10%;
+
+  width: 22%;
+
+  border-radius:10px;
+
+  font-size: 100%;
+
+}
+
+#button:hover{
+
+  background-color:#005FFF;
+
+}
+
+
+
+   header {
+   height:10%;
+
+   width:100%;
+
+   background-color: #000000;
+
+   text-align:center;
+  }
+
+.header-component {
+
+ display:inline-block;
+
+ color: white;
+
+}
+
+textarea{width:70%;}
+ tr{width:100%;}
+
+ .regist_form{
+
+  width: 100%;
+
+ }
+
+ .regist_form td {
+
+      border-top:solid 1px;
+
+      border-top:solid 1px;
+
+      line-height:18px;
+
+   }
+
+.checkbox{ width: 3%;}
+
+.nessesary {
+
+ width:8%;
+  
+}
+
+input{ width:70%;}
+
+
+a{
+  text-decoration: none;
+
+  }
+
+
+
+ a:hover{color:#005FFF;}
+
+</style>
+</head>
+<body>
+<###HEADER###>
+ <div id="container">
+   <div id="content">
+     <div style="text-align:center"><h1>申請詳細</h1></div>
+      <div>ログイン者名:<###LOGINNAME###></div>
+     <table class="regist_form">
+       <form id="form" method="post" action="./req_regist.php">
+        <tr><td>図書名<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_title" value="<###BOOKTITLE###>" required></td></tr>
+        <tr><td>図書名(カナ)<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_kana" value="<###BOOKKANA###>" required><td/></tr>
+        <tr><td>著者<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_author" value="<###BOOKAUTHOR###>" required></td></tr>
+        <tr><td>出版社<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_publisher" value="<###BOOKPUBLISHER###>" required></td></tr>
+        <tr><td>出版日<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="date" name="publish_date" value="<###PUBLISHDATE###>" required></td></tr>
+        <tr><td>価格<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_price" value="<###BOOKPRICE###>" required></td></tr>
+        <tr><td>申請日<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="date" name="request_date" value="<###REQUESTDATE###>" required></td></tr>
+        <tr><td>申請者<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="employee_name" value="<###EMPLOYEENAME###>" required></td></tr>
+        <tr><td>図書内容<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><###BOOKCONTENT###></td></tr>
+        <tr><td>現在の仕事との関連性<td class="nessesary"><span style="color:red">[必須]</span></td></td><td><input type="text" name="book_relation" value="<###BOOKRELATION###>" required></td></tr>
+        <tr><td>管理者コメント<td class="nessesary"><span style="color:red"></span></td></td><td><###MANAGERCOMMENT###></tr>
+        <tr><td>保管場所<td class="nessesary"><span style="color:red"></span></td></td><td><textarea name="book_location"><###BOOKLOCATION###></textarea></td></tr>
+        <tr><td>ステータス<td class="nessesary"><span style="color:red"></span></td></td><td><###REQUESTSTATUS###></td></tr>
+        <tr><td><input type="hidden" name="book_id" value="<###BOOKID###>"><input type="hidden" name="employee_number" value="<###BORROWERID###>"></td></tr>
+       </form>
+     </table>
+       <div ><input type="radio" class="checkbox" name="submit_option" value="1" form="form" checked="checked">変更<input type="radio" class="checkbox" name="submit_option" value="3" form="form">削除</div>
+        <div style="text-align:center;padding-top:20px"><###SUBMITBUTTON###></div>
+
+   </div>
+ </div>
+
+</body>
+

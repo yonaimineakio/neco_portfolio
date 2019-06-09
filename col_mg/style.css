@@ -1,0 +1,49 @@
+/* ドロップダウンメニュー */
+.menu {
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+}
+
+.menu li {
+	list-style: none;
+        color: white;
+
+}
+
+
+.menu li a {
+	width: 128px;
+	height: 40px;
+	font-size: 15px;
+	color: #ffffff;
+	background: #0077ff;
+	text-decoration: none;
+	border-right: 1px solid #eeeeee;
+	box-sizing: border-box;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.menu > li:hover > a {
+	color: #ffffff;
+	background: #7fbbff;
+}
+
+.menu li ul {
+	display: none;
+	margin-left: -40px;
+	position: absolute;
+}
+
+.menu > li li:hover > a {
+	color: #ffffff;
+	background: #7fbbff;
+}
+
+.menu li ul li a {
+	border-top: 1px solid #eeeeee;
+}
+

@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>ログイン画面</title>
+<style type="text/css">
+
+#container {
+ width:100%;
+ margin:0 auto;
+}
+
+#contents {
+ width: 90%;
+ margin:100px auto;
+
+}
+</style>
+</head>
+<body>
+<div id="container">
+<header style="text-align:center"><h1>Neco Company</h1></header>
+<div id="contents">
+<div style="text-align:center" id="title"><h2>図書申請システム</h2></div>
+<table style='border-width:5px;width:100%;border-style:solid;text-align:center'>
+
+
+<tr><td colspan="2" style="color:red"><###ERROR###></td></tr>
+
+<tr>
+
+<td colspan="2">  
+
+ログイン
+
+</td>
+
+</tr>
+
+<form method="post" action="./login_check.php">
+
+<tr>
+<td>社員番号</td>
+
+<td><input type="text" style="width:90%" name="number" id="number" placeholder="社員番号を入力してください"></input></td>
+</tr>
+
+<tr>
+<td>
+パスワード
+</td>
+
+<td><input type="password" style="width:90%" name="password" id="password" placeholder="パスワードを入力してください"></input></td>
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<input type="submit" style="width:200px" value="送信"></input>
+
+</td>
+
+</tr>
+
+
+
+
+</form>
+
+</table>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>
